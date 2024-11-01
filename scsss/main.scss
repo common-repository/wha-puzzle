@@ -1,0 +1,298 @@
+/*** Admin block ***/
+.wha-puzzle-container-admin {
+
+  h3 {
+    font-size: 16px;
+    margin: 10px 0 10px 0;
+  }
+
+  .wha-puzzle-admin {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+
+    & > .item-block {
+      border-right: 1px solid #ccc;
+      padding: 10px 10px;
+      width: 18%;
+      text-align: center;
+
+      label {
+        display: block;
+      }
+
+      select, input {
+        border: 1px solid #c0b9b9;
+        text-align: center;
+      }
+      input.jscolor {
+        width: 75%;
+        padding: 5px 10px;
+        border-radius: 15px;
+      }
+      select.select-horizontally,
+      select.select-vertical {
+        width: 100%;
+      }
+      select.select-scaling {
+        width: 100%;
+      }
+      & > .upload-block {
+        display: flex;
+        & > div {
+          margin-top: 15px;
+        }
+        img {
+          margin-right: 10px;
+        }
+        h6 {
+          margin: 0;
+          text-align: left;
+          font-size: 12px;
+          color: #c41722;
+        }
+        input {
+          border: none;
+        }
+      }
+    }
+    & > .item-block:last-child {
+      border-right: none;
+      h3 {
+        text-align: center;
+      }
+      h6 {
+        margin: 5px 0;
+        font-size: 12px;
+        color: #c41722;
+      }
+    }
+
+    #whapz-slider {
+      border: 1px solid #b5b5b5;
+      margin-top: 10px;
+      height: 20px;
+      background: #ededed;
+
+      #whapz-handle {
+        width: 3em;
+        height: 30px;
+        top: 50%;
+        margin-top: -15px;
+        text-align: center;
+        line-height: 1.6em;
+        position: relative;
+        background: #373737;
+        cursor: pointer;
+      }
+
+      .value-wrapper {
+        display: block;
+        position: absolute;
+        top: 34px;
+        left: -4px;
+        border: 1px solid grey;
+        right: -13px;
+        color: #000000;
+      }
+
+      .value-wrapper::before {
+        content: '';
+        position: absolute;
+        display: block;
+        left: 20px;
+        top: -16px;
+        border: 5px solid transparent;
+        border-bottom: 10px solid grey;
+      }
+    }
+  }
+}
+
+
+/*** Frontend block ***/
+#myCanvas {
+  z-index: 1000;
+}
+
+#whapz-puzzle {
+  text-align: center;
+  max-width: 100%;
+}
+
+.whapz-panel-puzzle {
+  background-color: #282828;
+  float: left;
+  width: 100%;
+  padding: 5px 0;
+  font-family: Tahoma, sans-serif;
+  a {
+    float: right;
+    margin: 5px 5px 0 0;
+    text-align: right;
+    img {
+      box-shadow: none !important;
+    }
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  .whapz-timer-wrap {
+    float: left;
+    width: 80%;
+    padding: 0 10px 0 10px;
+    & > .whapz-group-buttons {
+      float: left;
+      width: auto;
+      text-align: left;
+      padding: 5px 10px 0 0;
+
+      input {
+        width: 55px;
+        border: none;
+        padding: 15px 0;
+        background-size: contain !important;
+      }
+      input.whapz-startButton {
+        background:  url("../images/icon-start.png") no-repeat 0 0;
+      }
+      input.whapz-resetButton {
+        background:  url("../images/icon-restart.png") no-repeat 0 0;
+      }
+      input:hover {
+        cursor: pointer;
+      }
+    }
+    & > .whapz-timer-item {
+      float: left;
+      width: auto;
+      color: #FFF;
+      font-size: 30px;
+    }
+  }
+  .whapz-completed {
+    width: 98%;
+    float: left;
+    font-size: 18px;
+    color: #3f8d39;
+    font-family: "Courier New";
+    border-top: 1px solid #3e3c3c;
+    margin: 5px 5px 0 5px;
+    text-align: center;
+  }
+}
+
+.whapz-full {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+}
+
+
+/*** --- Modal window --- ***/
+#modal_form {
+  width: 100%;
+  max-width: 25%;
+  border-radius: 5px;
+  border: 1px #7f7f7f solid;
+  background: #fff;
+  position: fixed;
+  left: 37%;
+  margin-top: -150px;
+  display: none;
+  z-index: 1100;
+  padding: 30px 10px;
+}
+#modal_form #modal_close {
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  display: block;
+}
+#modal_form .content {
+  padding: 15px;
+  text-align: center;
+  h4 {
+    margin: 7px 0;
+  }
+  p {
+    border-top: 1px solid #CCCC;
+    padding-top: 10px;
+  }
+  img {
+    display: inline;
+  }
+}
+#overlay {
+  z-index:1003;
+  position:fixed;
+  background-color:#000;
+  opacity:0.6;
+  -moz-opacity:0.8;
+  filter:alpha(opacity=80);
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  cursor:pointer;
+  display:none;
+}
+/*** ----  End modal --- ***/
+
+
+
+@media (min-width: 300px) and (max-width: 768px) {
+  #whapz-puzzle {
+
+    & > .whapz-panel-puzzle {
+
+      a {
+        float: right;
+        width: 13%;
+        padding-right: 7px;
+      }
+      .whapz-timer-wrap {
+        width: 80%;
+        padding: 5px 0 0 5px;
+
+        & > .whapz-group-buttons {
+          padding: 0;
+          width: auto;
+          display: flex;
+          align-items: center;
+          input {
+            width: 55px;
+            padding: 15px 7px;
+            margin-right: 7px;
+          }
+        }
+
+        & > .whapz-timer-item {
+          width: 30%;
+          font-size: 24px;
+        }
+      }
+      .whapz-completed {
+        width: 96%;
+        float: left;
+        font-size: 20px;
+        color: #3f8d39;
+        border-top: 1px solid #3e3c3c;
+        margin: 5px 5px 0 5px;
+      }
+    }
+  }
+  #modal_form {
+    max-width: 85%;
+    left: 5%;
+  }
+}
+
